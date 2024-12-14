@@ -26,5 +26,26 @@ end
 
 starship init fish | source
 enable_transience
-neofetch
+
+if not set -q NVIM
+    neofetch
+end
+
+if not pgrep -u (id -u) -x ssh-agent > /dev/null
+    eval (ssh-agent -c)
+end
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+if test -f /home/mjkhan/anaconda3/bin/conda
+    eval /home/mjkhan/anaconda3/bin/conda "shell.fish" "hook" $argv | source
+else
+    if test -f "/home/mjkhan/anaconda3/etc/fish/conf.d/conda.fish"
+        . "/home/mjkhan/anaconda3/etc/fish/conf.d/conda.fish"
+    else
+        set -x PATH "/home/mjkhan/anaconda3/bin" $PATH
+    end
+end
+# <<< conda initialize <<<
 

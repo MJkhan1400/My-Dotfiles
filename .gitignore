@@ -1,0 +1,15 @@
+# Ignore everything
+*
+
+# Whitelist specific folders/files
+!fish/
+!hypr/
+!nvim/
+!neofetch/
+!wallpaper/
+!waybar/
+!wofi/
+!kitty/
+!Lazygit/
+!README.md
+!.gitignore
